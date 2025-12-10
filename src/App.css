@@ -1,38 +1,91 @@
-.App {
+/* src/App.css */
+
+/* GLOBAL */
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  /* FIX: Change global background from yellow to dark grey */
+  background: #2c2c2c; 
+}
+
+/* ... keep the rest of your App.css content (Navbar styles, Portfolio styles, etc.) below this ... */
+
+
+
+/* SECTIONS */
+.section {
+  padding: 60px 40px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+/* PORTFOLIO FLIP CARDS */
+.project-card {
+  width: 100%;
+  height: 224px; /* Adjust height if needed */
+  perspective: 1000px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.project-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  border-radius: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Card becomes 1.1 times bigger on hover */
+.project-card:hover .project-inner {
+  transform: scale(1.1);
 }
 
-.App-link {
-  color: #61dafb;
+/* When the card is 'flipped' (i.e., hovered) */
+.project-inner.flipped {
+  /* We remove the rotation so the back becomes an overlay, and keep the scale */
+  transform: scale(1.1); 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.project-front,
+.project-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease; /* For smooth overlay fade */
+}
+
+/* Opacity becomes 50% on the image (front side) when flipped (hovered) */
+.project-inner.flipped .project-front {
+    opacity: 0.5;
+}
+
+.project-back {
+  background: transparent; /* Allows front image to show through overlay */
+  z-index: 5; /* Ensure the back (overlay) is on top */
+  opacity: 0; /* Start hidden */
+}
+
+/* Make the overlay visible when flipped (hovered) */
+.project-inner.flipped .project-back {
+    opacity: 1;
+}
+
+/* Ensure the code-like text in the About section wraps correctly */
+.whitespace-pre-wrap {
+    white-space: pre-wrap;
+}
+
+#home {
+    /* Use ID selector to override general conflicting CSS */
+    display: grid !important;
+    /* Force 2 equal columns on desktop devices */
+    grid-template-columns: 1fr 1fr !important;
 }

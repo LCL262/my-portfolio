@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* index.css */
+
+html {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* CHANGE: Black text to White text */
+  color: #ffffff; 
+  /* CHANGE: Light yellow background to Dark Grey */
+  background-color: #2c2c2c; 
+}
+
+
+
+/* SECTIONS (Remove height and padding adjustments if Tailwind handles it) */
+section {
+  min-height: 100vh;
+  /* CHANGE: Remove the padding that was conflicting with fixed navbar layout */
+  /* padding: 120px 40px 40px; */ 
+  padding: 0 40px 40px; /* Reset top padding to 0, keep side/bottom padding */
+}
+/* ... rest of index.css remains the same ... */
+
+section h1,
+section h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+/* ABOUT SECTION */
+#about p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* CONTACT */
+#contact p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.portfolio-box {
+  background-color: #b0b0b0; /* grey */
+  height: 200px; /* adjust if needed */
+  border-radius: 12px;       /* optional rounded corners */
 }
