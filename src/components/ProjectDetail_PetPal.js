@@ -8,7 +8,7 @@ const ProjectDetailPetPal = ({ onBack }) => {
         about: 'This project is to develop a website for pet owners or sellers to share resources and knowledge.',
         tasks: 'I developed the user account management system with basic CRUD functions and role-base access. I also allowed users to search usernames by keywords.',
         url: 'Currently not available',
-        imageUrl: '/petpal.jpg' // Using the image path from your portfolio data
+        imageUrl: '/PetPal.jpg' // Using the image path from your portfolio data
     };
 
     return (

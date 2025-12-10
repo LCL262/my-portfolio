@@ -2,7 +2,7 @@ import React from 'react';
 
 // Assuming the image path
 // NOTE: I've changed the image path to match what you provided: '/digital_banner.jpg'
-const TRAVELLY_IMAGE_PATH = '/digital_banner.jpg'; 
+const TRAVELLY_IMAGE_PATH = '/Digital_Banner.jpg';
 
 // Component now receives the onBack handler as a prop
 function ProjectDetailTravelly({ onBack }) { 

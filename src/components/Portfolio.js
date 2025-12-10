@@ -9,8 +9,8 @@ import ProjectDetailPetPal from './ProjectDetail_PetPal';
 
 // --- Placeholder Data for 6 Projects ---
 const projects = [
-  { id: 1, title: 'Digital Banner for Travelly', type: 'Design', image: '/digital_banner.jpg' },
-  { id: 2, title: 'User Account Management for PetPal', type: 'Development', image: '/petpal.jpg' },
+  { id: 1, title: 'Digital Banner for Travelly', type: 'Design', image: '/Digital_Banner.jpg' },
+  { id: 2, title: 'User Account Management for PetPal', type: 'Development', image: '/PetPal.jpg' },
   { id: 3, title: 'Project Three Title', type: 'Design', image: '/project3-thumb.jpg' },
   { id: 4, title: 'Project Four Title', type: 'Development', image: '/project4-thumb.jpg' },
   { id: 5, title: 'Project Five Title', type: 'Design', image: '/project5-thumb.jpg' },
