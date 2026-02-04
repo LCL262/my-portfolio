@@ -1,91 +1,764 @@
-/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Gwendolyn:wght@400;700&display=swap');
 
-/* GLOBAL */
-body, html {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  font-family: Arial, sans-serif;
-  /* FIX: Change global background from yellow to dark grey */
-  background: #2c2c2c; 
+
+
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Full height minus navbar height */
+    padding: 0 10%;
+    background-color: #f8f9fa; /* Light background to make the blue navbar pop */
 }
 
-/* ... keep the rest of your App.css content (Navbar styles, Portfolio styles, etc.) below this ... */
-
-
-
-/* SECTIONS */
-.section {
-  padding: 60px 40px;
-  text-align: center;
+/* Left Side Content */
+.home-content {
+    max-width: 50%;
 }
 
+.intro-text {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #555;
+}
 
+.name-text {
+    font-family: 'Instrument Serif', serif;
+    font-size: 5rem;
+    color: #00B4D8; /* Matching your navbar color */
+    margin: 10px 0;
+    line-height: 1;
+}
 
-/* PORTFOLIO FLIP CARDS */
+.description-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Specific Font Styling */
+.special-font {
+    font-family: 'Gwendolyn', cursive;
+    font-size: 2rem;
+    color: #00B4D8;
+    vertical-align: middle;
+}
+
+.cta-text {
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+}
+
+/* Right Side Image */
+.home-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%; /* Makes it a round box */
+    object-fit: cover;  /* Ensures your photo isn't stretched */
+    border: 5px solid #00B4D8; /* Optional: adds a blue ring around your photo */
+}
+
+.navbar {
+    background-color: #00B4D8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 100px;
+    color: white;
+
+    /* Sticky Logic */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of all other elements */
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.about-page {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.code-block {
+    background-color: #f8f9fa; /* Light grey background for the code */
+    border-left: 5px solid #00B4D8;
+    padding: 30px;
+    border-radius: 8px;
+    color: #24292e;
+    font-family: 'Courier New', monospace; /* Monospace for code feel */
+}
+
+/* Syntax Highlighting for Light Mode */
+.red { color: #d73a49; }   /* Logic/Keywords */
+.green { color: #22863a; } /* Strings */
+.pink { color: #6f42c1; }  /* Object Keys */
+
+.skills-column {
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    color: #333;
+}
+
+.skills-column h3 {
+    color: #00B4D8;
+}
+
+/* Part 1: Code Styling */
+.about-code-section {
+    padding: 60px 10%;
+}
+
+.about-header {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.code-block {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Color Classes for Code */
+.red { color: #FF3B30; }
+.green { color: #4CD964; }
+.pink { color: #FF2D55; }
+
+/* Indentation Logic */
+.indent-1 { padding-left: 20px; }
+.indent-2 { padding-left: 40px; }
+.indent-3 { padding-left: 60px; }
+.indent-4 { padding-left: 80px; }
+
+/* Part 2: Skills Grid Styling */
+.skills-section {
+    padding: 0 5%;
+    text-align: center;
+}
+
+.skills-main-title {
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.skills-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skills-column {
+    background-color: #0F0F0F; /* Very dark grey cards */
+    flex: 1;
+    padding: 40px 20px;
+    min-width: 280px;
+}
+
+.skills-column h3 {
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icons-container img {
+    width: 50px;
+    height: 50px;
+}
+
+.soft-skills {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+}
+
+.soft-skills li {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.certificates-section {
+    padding: 60px 5% 100px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* Ensure the clickable card looks like a card, not a text link */
+.certificates-grid a.cert-card {
+    text-decoration: none; /* Removes underline from the whole card */
+    display: flex; /* Keeps the icon and text side-by-side */
+    cursor: pointer;
+}
+
+.cert-card:hover .cert-name {
+    color: #00B4D8; /* Title turns blue on hover to show it's clickable */
+}
+
+.cert-icon-box img {
+    width: 45px;
+    height: 45px;
+    filter: saturate(1.5); /* Makes the HackerRank green pop slightly more */
+}
+
+.cert-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-color: #00B4D8;
+}
+
+.cert-icon {
+    /* This forces the 50MB-equivalent icon to display at a sane web size */
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.cert-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: #f4f4f4; /* Light grey circle or box for the icon */
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.cert-icon-box img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.cert-placeholder-icon {
+    font-size: 2rem;
+}
+
+.cert-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.cert-issuer {
+    font-size: 0.9rem;
+    color: #00B4D8; /* Signature Blue */
+    margin-bottom: 2px;
+}
+
+.cert-date {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.portfolio-section {
+    padding: 80px 5%;
+    background-color: #ffffff; /* Matching your white homepage */
+    color: #333;
+}
+
+.portfolio-title {
+    text-align: center;
+    font-family: 'Instrument Serif', serif;
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+
+/* The 3x2 Grid */
+/* Container for the whole grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 20px 0;
+}
+
+/* The Card itself */
 .project-card {
-  width: 100%;
-  height: 224px; /* Adjust height if needed */
-  perspective: 1000px;
-  cursor: pointer;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    position: relative;
 }
 
-.project-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-  border-radius: 1rem;
+/* Hover Effect: Lift and Shadow */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.1); /* Subtle blue glow */
+    border-color: #00B4D8;
 }
 
-/* Card becomes 1.1 times bigger on hover */
-.project-card:hover .project-inner {
-  transform: scale(1.1);
+/* Image Container */
+.project-image-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #f8f9fa;
 }
 
-/* When the card is 'flipped' (i.e., hovered) */
-.project-inner.flipped {
-  /* We remove the rotation so the back becomes an overlay, and keep the scale */
-  transform: scale(1.1); 
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.project-front,
-.project-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.3s ease; /* For smooth overlay fade */
+.project-card:hover .project-img {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
-/* Opacity becomes 50% on the image (front side) when flipped (hovered) */
-.project-inner.flipped .project-front {
-    opacity: 0.5;
+/* Overlay that appearing on hover */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 180, 216, 0.8); /* Signature Blue with transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
-.project-back {
-  background: transparent; /* Allows front image to show through overlay */
-  z-index: 5; /* Ensure the back (overlay) is on top */
-  opacity: 0; /* Start hidden */
-}
-
-/* Make the overlay visible when flipped (hovered) */
-.project-inner.flipped .project-back {
+.project-card:hover .project-overlay {
     opacity: 1;
 }
 
-/* Ensure the code-like text in the About section wraps correctly */
-.whitespace-pre-wrap {
-    white-space: pre-wrap;
+/* Text Detail Area */
+.project-details {
+    padding: 20px;
+    background: white;
 }
 
-#home {
-    /* Use ID selector to override general conflicting CSS */
-    display: grid !important;
-    /* Force 2 equal columns on desktop devices */
-    grid-template-columns: 1fr 1fr !important;
+.project-category {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00B4D8; /* Signature Blue */
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.project-card-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.4;
+}
+.back-btn {
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: background 0.2s;
+}
+
+.back-btn:hover {
+    background-color: #666;
+}
+
+.detail-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.detail-title {
+    font-size: 2.5rem;
+    color: #00B4D8;
+    margin-bottom: 10px;
+}
+
+.title-underline {
+    height: 4px;
+    width: 80px;
+    background-color: #4a4a4a;
+    margin-bottom: 40px;
+}
+
+.detail-image-box {
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.detail-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.detail-section {
+    margin-bottom: 35px;
+}
+
+.detail-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.accent {
+    color: #fbbf24; /* Yellow color for the slashes */
+    margin-right: 10px;
+}
+
+.detail-section p, .detail-list li {
+    color: #d1d5db;
+    line-height: 1.6;
+}
+
+.detail-list {
+    padding-left: 20px;
+}
+
+.detail-list li {
+    margin-bottom: 10px;
+}
+
+.url-status {
+    color: #f87171 !important; /* Red color for 'not available' */
+    font-weight: bold;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff; /* Consistent white background */
+    color: #333333; /* Dark grey text for readability */
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* Reusable Accent Colors */
+.text-blue { color: #00B4D8; }
+.bg-blue { background-color: #00B4D8; }
+
+/* Section Spacing */
+section {
+    padding: 100px 10%;
+}
+
+.contact-section {
+    background-color: #ffffff; /* White background for consistency */
+    min-height: 80vh;
+    padding: 100px 10%;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.contact-subtext {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.contact-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Icon size set to 80px - 200px is usually too large for standard rows,
+   but you can change this value to 200px if you prefer the giant look! */
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    object-contain: contain;
+}
+
+.contact-link {
+    font-size: 1.3rem;
+    color: #00B4D8; /* Your signature blue */
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #0077B6; /* Darker blue on hover */
+}
+
+.footer-container {
+    background-color: #ffffff;
+    padding: 40px 10% 20px;
+    text-align: center;
+}
+
+.footer-line {
+    height: 1px;
+    background-color: #eeeeee; /* Light divider line */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #777;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+
+.scroll-top-btn {
+    background-color: #00B4D8;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-top-btn:hover {
+    background-color: #0077B6;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    cursor: pointer;
+    color: #777;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    color: #00B4D8;
+}
+
+.filter-btn.active {
+    color: #00B4D8;
+    border-bottom: 2px solid #00B4D8;
+}
+
+.main-detail-img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.process-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.process-step h3 {
+    font-size: 1.5rem;
+    color: #000; /* Black for contrast */
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.step-num {
+    color: #00B4D8; /* Your signature blue */
+    font-weight: 800;
+    margin-right: 12px;
+    font-size: 1rem;
+    border: 1px solid #00B4D8;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.process-step p {
+    color: #333; /* Dark grey for readability */
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.live-link-btn {
+    display: inline-block;
+    margin-top: 30px;
+    color: #00B4D8;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid #00B4D8;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.live-link-btn:hover {
+    background: #00B4D8;
+    color: #fff;
+}
+
+.technical-summary {
+    background: #fcfcfc; /* Very subtle off-white to define the area */
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #eeeeee;
+    margin-top: 40px;
+}
+
+.summary-title {
+    color: #000000; /* Deep black for the header */
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contribution-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contribution-item {
+    color: #1a1a1a; /* True black/dark grey for readability */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+/* Using your signature blue for the bullet points */
+.contribution-item::before {
+    content: "•";
+    color: #00B4D8;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.pdf-showcase-box {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 40px;
+}
+
+.pdf-btn {
+    display: inline-block;
+    background-color: #00B4D8; /* Your Signature Blue */
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.pdf-btn:hover {
+    background-color: #0077b6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+}
+
+/* Ensure the video is the hero */
+.main-detail-video {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
 }

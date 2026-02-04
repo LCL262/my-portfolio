@@ -1,42 +1,40 @@
-// App.js (FIXED)
-
 import React, { useState } from "react";
 import "./App.css";
 
 // Import all modularized components
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import Portfolio from "./components/Portfolio";
-import About from "./components/About";
-import Contact from "./components/Contact";
-
+import Home from "./Pages/Home";
+import Portfolio from "./Pages/Portfolio";
+import About from "./Pages/AboutMe";
+import Contact from "./Pages/Contact";
+import Footer from "./components/Footer"; // Don't forget to import the footer!
 
 export default function App() {
-  // State for the Portfolio hover-flip effect must remain here
-  const [flipped, setFlipped] = useState([false, false, false, false, false, false]);
+    // State for the Portfolio hover-flip effect
+    const [flipped, setFlipped] = useState([false, false, false, false, false, false]);
 
-  // Handler to set the flipped state (true or false) for hover effect
-  const setCardFlipped = (index, isFlipped) => {
-    setFlipped((prev) =>
-      prev.map((v, i) => (i === index ? isFlipped : v))
-    );
-  };
+    // Handler to set the flipped state for hover effect
+    const setCardFlipped = (index, isFlipped) => {
+        setFlipped((prev) =>
+            prev.map((v, i) => (i === index ? isFlipped : v))
+        );
+    };
 
-  return (
-    // FIX: Add 'relative' (just in case) and 'pt-32' (128px) to push content below the large fixed Navbar
-    <div className="font-sans text-white bg-[#2c2c2c] relative pt-32"> 
+    return (
+        /* Removed 'bg-[#2c2c2c]' and 'text-white' to keep consistency with the white theme */
+        <div className="app-main-wrapper">
+            <Navbar />
 
-      <Navbar /> 
-      
-      <Home /> 
-      
-      {/* Portfolio receives the state and handler as props */}
-      <Portfolio flipped={flipped} setCardFlipped={setCardFlipped} /> 
-      
-      <About />
-      
-      <Contact /> 
+            <Home />
 
-    </div>
-  );
+            {/* Portfolio receives the state and handler as props */}
+            <Portfolio flipped={flipped} setCardFlipped={setCardFlipped} />
+
+            <About />
+
+            <Contact />
+
+            <Footer />
+        </div>
+    );
 }
