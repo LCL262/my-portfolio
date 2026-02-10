@@ -21,7 +21,7 @@ function Contact() {
                         className="contact-icon"
                     />
                     <a
-                        href="https://www.linkedin.com/in/chunlin-liu-696947304/"
+                        href="https://www.linkedin.com/in/chunlin-liu-696947304"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="contact-link"
